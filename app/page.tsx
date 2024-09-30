@@ -1,4 +1,18 @@
-/** Add your relevant code here for the issue to reproduce */
-export default function Home() {
-  return null;
+export default function Page() {
+  async function createInvoice(formData: FormData) {
+    'use server'
+ 
+    const rawFormData = {
+      customerId: formData.get('customerId'),
+      amount: formData.get('amount'),
+      status: formData.get('status'),
+    }
+
+    // mutate data
+    // revalidate cache
+
+    return {data: 'something'}
+  }
+ 
+  return <form action={createInvoice}>...</form>
 }
